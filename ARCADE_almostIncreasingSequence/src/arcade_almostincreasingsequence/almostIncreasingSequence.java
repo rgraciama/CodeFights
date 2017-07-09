@@ -9,7 +9,7 @@ package arcade_almostincreasingsequence;
  *
  * @author Rulo
  */
-public class ARCADE_almostIncreasingSequence {
+public class almostIncreasingSequence {
 
     /**
      * @param args the command line arguments
