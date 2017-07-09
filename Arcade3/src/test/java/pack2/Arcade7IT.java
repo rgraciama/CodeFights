@@ -17,11 +17,11 @@ import static org.junit.Assert.*;
  *
  * @author Rulo
  */
-public class Test_Arcade3 {
+public class Arcade7IT {
 
-    Arcade3 a = new Arcade3();
+    Arcade7 a = new Arcade7();
 
-    public Test_Arcade3() {
+    public Arcade7IT() {
 
     }
 
@@ -43,8 +43,19 @@ public class Test_Arcade3 {
     }
 
     /**
-     * Test of almostIncreasingSequence method, of class Arcade3.
+     * Test of almostIncreasingSequence method, of class Arcade7.
      */
+    @org.junit.Test
+    public void test22_AlmostIncreasingSequence() {
+        int[] sequence = {5384, 12, 34, 54, 48};
+        boolean expResult = false;
+
+        System.out.println("22.almostIncreasingSequence test:" + Arrays.toString(sequence));
+
+        boolean result = a.almostIncreasingSequence(sequence);
+        assertEquals(expResult, result);
+    }    
+    
     @org.junit.Test
     public void test01_AlmostIncreasingSequence() {
         int[] sequence = {1, 3, 2, 1};
@@ -61,7 +72,7 @@ public class Test_Arcade3 {
         int[] sequence = {1, 3, 2};
         boolean expResult = true;
 
-        System.out.println("2.almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("2.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -72,7 +83,7 @@ public class Test_Arcade3 {
         int[] sequence = {1, 2, 1, 2};
         boolean expResult = false;
 
-        System.out.println("3.almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("3.almostIncreasingSequence test:" + Arrays.toString(sequence) + " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -83,7 +94,7 @@ public class Test_Arcade3 {
         int[] sequence = {1, 4, 10, 4, 2};
         boolean expResult = false;
 
-        System.out.println("almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("4.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -94,7 +105,7 @@ public class Test_Arcade3 {
         int[] sequence = {10, 1, 2, 3, 4, 5};
         boolean expResult = true;
 
-        System.out.println("almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("5.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -105,7 +116,7 @@ public class Test_Arcade3 {
         int[] sequence = {1, 1, 1, 2, 3};
         boolean expResult = false;
 
-        System.out.println("almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("6.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -116,7 +127,7 @@ public class Test_Arcade3 {
         int[] sequence = {0, -2, 5, 6};
         boolean expResult = true;
 
-        System.out.println("almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("7.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -127,18 +138,29 @@ public class Test_Arcade3 {
         int[] sequence = {1, 2, 3, 4, 5, 3, 5, 6};
         boolean expResult = false;
 
-        System.out.println("almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("8.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
     }
+    
+            @org.junit.Test
+    public void test12_AlmostIncreasingSequence() {
+        int[] sequence = {1, 2, 3, 4, 3, 6};
+        boolean expResult = true;
+
+        System.out.println("12.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
+
+        boolean result = a.almostIncreasingSequence(sequence);
+        assertEquals(expResult, result);
+    }    
     
                 @org.junit.Test
     public void test15_AlmostIncreasingSequence() {
         int[] sequence = {3, 5, 67, 98, 3};
         boolean expResult = true;
 
-        System.out.println("15.almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("15.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -149,7 +171,7 @@ public class Test_Arcade3 {
         int[] sequence = {1,1};
         boolean expResult = true;
 
-        System.out.println("15.almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("15.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -160,7 +182,7 @@ public class Test_Arcade3 {
         int[] sequence = {1,0};
         boolean expResult = true;
 
-        System.out.println("15.almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("15.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -172,7 +194,7 @@ public class Test_Arcade3 {
         int[] sequence = {999, -987, -983, -972, -966, -934, -924, -917, -900, -898, -887, -879, -874, -867, -842, -804, -762, -729, -712, -703, -688, -677, -663, -661, -650, -628, -619, -610, -607, -599, -581, -578, -494, -488, -487, -477, -468, -461, -432, -381, -377, -376, -339, -330, -329, -304, -292, -291, -277, -257, -256, -242, -236, -235, -220, -137, -100, -46, -33, -17, -3, -2, 6, 35, 110, 124, 127, 130, 186, 214, 236, 255, 301, 311, 322, 348, 355, 374, 375, 384, 391, 392, 400, 410, 437, 487, 520, 572, 603, 627, 644, 657, 666, 676, 714, 750, 897, 898, 950, 972, 995};
         boolean expResult = true;
 
-        System.out.println("16.almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("16.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -183,7 +205,7 @@ public class Test_Arcade3 {
         int[] sequence = {-997, -978, -975, -968, -959, -956, -907, -872, -871, -858, -836, -827, -823, -794, -786, -771, -740, -728, -716, -711, -697, -660, -659, -638, -633, -607, -601, -597, -573, -562, -548, -536, -517, -500, -433, -402, -387, -384, -301, -291, -283, -270, -252, -240, -230, -221, -215, -202, -200, -185, -171, -73, -47, -38, -34, -17, -3, 8, 42, 56, 65, 133, 140, 146, 180, 192, 201, 233, 241, 256, 285, 302, 320, 353, 324, 420, 428, 429, 442, 470, 487, 542, 547, 561, 564, 664, 666, 670, 693, 738, 793, 824, 845, 848, 864, 929, 931, 952, 985, 997, 1};
         boolean expResult = false;
 
-        System.out.println("17.almostIncreasingSequence test:" + Arrays.toString(sequence));
+        System.out.println("17.almostIncreasingSequence test:" + Arrays.toString(sequence)+ " exp:" +expResult);
 
         boolean result = a.almostIncreasingSequence(sequence);
         assertEquals(expResult, result);
@@ -233,16 +255,7 @@ public class Test_Arcade3 {
         assertEquals(expResult, result);
     }   
     
-    @org.junit.Test
-    public void test22_AlmostIncreasingSequence() {
-        int[] sequence = {5384, 12, 34, 54, 48};
-        boolean expResult = false;
 
-        System.out.println("22.almostIncreasingSequence test:" + Arrays.toString(sequence));
-
-        boolean result = a.almostIncreasingSequence(sequence);
-        assertEquals(expResult, result);
-    }
 
     @org.junit.Test
     public void test23_AlmostIncreasingSequence() {
