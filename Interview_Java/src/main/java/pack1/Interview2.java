@@ -3,25 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pack2;
+package pack1;
 
 /**
  *
  * @author Rulo
  */
 public class Interview2 {
-    int matrixElementsSum(int[][] matrix) {
-        int count = 0;
-        boolean isOk =true;
-        for (int j = 0; j < matrix[0].length; j++) {
-            int i = 0;
-            isOk = true;
-            while(i<matrix.length && isOk) {
-                count += matrix[i][j];
-                if (matrix[i][j]==0) isOk=false;
-                i++;
-            } 
+
+    char firstNotRepeatingCharacter(String s) {
+        if (s.length() == 1) {
+            return s.charAt(0);
         }
-        return count;
+        int mid = s.length() / 2, ini = 0;
+        int i = 0;
+        String sTextoBuscado = "";
+        int contador = 0;
+//        while (s.matches(s.substring(0,mid-1))) {
+//            
+//        }
+
+        while (s.indexOf(s.substring(ini,mid-1)) > -1) {
+            s = s.substring(s.indexOf(sTextoBuscado) + sTextoBuscado.length(), s.length());
+            contador++;
+        }
+        return 'z';
     }
+
 }

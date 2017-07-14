@@ -2,6 +2,7 @@ package pack1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  *
@@ -10,20 +11,17 @@ import java.util.Arrays;
 public class Interview1 {
 
     int firstDuplicate(int[] a) {
-        //Arrays.sort(a);
-        if (a.length==1) return -1;
-        int i = 1;
-        if (a[i-1]==a[i]) return a[i];
-        else i++;
-        while (i<a.length) {
-            int j = i-1;
-            while (a[i]!=a[j] && j>0) {
-                j--;
+        //Dado un array donde los valores de este no seran mayores que su lentgh
+        //Recorres el array, pero buscas su posicion y lo marcas con un -
+        //Entonces cuando vuelva a salir el mismo detectara el valor negativo
+        //Y BooOom!
+        for (int i : a) {
+            if (a[Math.abs(i) - 1] < 0) {
+                return Math.abs(i);
             }
-            if (a[i]==a[j]) return a[i];
-            i++;
+            a[Math.abs(i) - 1] *= -1;
         }
         return -1;
-    }
 
+    }
 }
