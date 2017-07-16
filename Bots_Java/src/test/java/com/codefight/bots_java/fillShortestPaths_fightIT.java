@@ -37,9 +37,9 @@ public class fillShortestPaths_fightIT {
     public void tearDown() {
     }
 
-        @Test
+    @Test
     public void test1_FillShortestPaths() {
-        System.out.println("fillShortestPaths");
+        System.out.println("1.fillShortestPaths");
         char[][] plan = {{' ', ' ', ' ', ' ', ' ', ' '},
         {' ', ' ', ' ', ' ', ' ', ' '},
         {' ', ' ', ' ', ' ', ' ', ' '},
@@ -48,26 +48,84 @@ public class fillShortestPaths_fightIT {
         {' ', ' ', ' ', ' ', ' ', ' '},
         {' ', ' ', ' ', ' ', ' ', ' '},
         {' ', ' ', ' ', ' ', ' ', ' '}};
-        fillShortestPaths_fight instance = new fillShortestPaths_fight();
-        char[][] expResult = {{'s'}};
+        fillShortestPaths_fight instance = new fillShortestPaths_fight(plan);
+        char[][] expResult = {{' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '},
+        {'#', ' ', ' ', ' ', ' ', ' '},
+        {'#', '#', ' ', ' ', ' ', ' '},
+        {'#', '#', 's', ' ', ' ', ' '},
+        {'#', '#', ' ', ' ', ' ', ' '},
+        {'#', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '}};
         char[][] result = instance.fillShortestPaths(plan);
         assertArrayEquals(expResult, result);
 
     }
-    
+
+    @Test
+    public void test2_FillShortestPaths() {
+        System.out.println("2.fillShortestPaths");
+        char[][] plan
+                = {{' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', 's', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '}};
+        fillShortestPaths_fight instance = new fillShortestPaths_fight(plan);
+        char[][] expResult = {{' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '},
+        {'#', ' ', ' ', ' ', ' ', ' '},
+        {'#', '#', ' ', ' ', ' ', ' '},
+        {'#', '#', 's', ' ', ' ', ' '},
+        {'#', '#', ' ', ' ', ' ', ' '},
+        {'#', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '}};
+        
+        char[][] result = instance.fillShortestPaths(plan);
+        assertArrayEquals(expResult, result);
+
+    }
+
     /**
      * Test of fillShortestPaths method, of class fillShortestPaths_fight.
      */
     @Test
     public void test3_FillShortestPaths() {
-        System.out.println("fillShortestPaths");
+        System.out.println("3.fillShortestPaths");
         char[][] plan = {{'s'}};
-        fillShortestPaths_fight instance = new fillShortestPaths_fight();
+        fillShortestPaths_fight instance = new fillShortestPaths_fight(plan);
         char[][] expResult = {{'s'}};
         char[][] result = instance.fillShortestPaths(plan);
         assertArrayEquals(expResult, result);
 
     }
 
+    @Test
+    public void test4_FillShortestPaths() {
+        System.out.println("4.fillShortestPaths");
+        char[][] plan = {{' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', 's', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' '}};
+        fillShortestPaths_fight instance = new fillShortestPaths_fight(plan);
+        char[][] expResult
+                = {{'#', '#', '#', '#', '#', ' '},
+                {'#', '#', '#', '#', ' ', ' '},
+                {'#', '#', 's', ' ', ' ', ' '},
+                {'#', '#', ' ', ' ', ' ', ' '},
+                {'#', ' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' ', ' '}};
+        char[][] result = instance.fillShortestPaths(plan);
+        assertArrayEquals(expResult, result);
+
+    }
 
 }
