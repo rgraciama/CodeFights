@@ -16,29 +16,35 @@ public class ReverseParentheses {
 
     String reverseParentheses(String s) {
         if (s.contains("(")) {
-            return reverseFragmentParentheses2(s);
+            return reverseFragmentParentheses(s);
         } 
         return s;
     }
     String reverseFragmentParentheses(String s) {
-        Pattern patron = Pattern.compile("/\\(([^()]*)\\)/i");
+        Pattern patron = Pattern.compile("\\(([^()]*)\\)");
         Matcher encaja = patron.matcher(s);
         int count = 0;
         while(encaja.find()) {
             count++;
-            System.out.println("found: " + count + " : "
-                    + encaja.start() + " - " + encaja.end());
+            //s = encaja.replaceFirst("-");
+            StringBuilder sB = new StringBuilder(encaja.group());
+            sB = new StringBuilder(sB.substring(1, sB.length()-1));
+            sB.reverse();
+            //System.out.println(sB);
+            s = encaja.replaceFirst(sB.toString());
+            
+            //System.out.println(s);
+            //System.out.println("found: " + count + " : "
+            //        + encaja.start() + " - " + encaja.end());
+            encaja = patron.matcher(s);
         }
-        return "Hola";
+        return s;
     }
     
     public static void main (String[] args) {
         ReverseParentheses r = new ReverseParentheses();
-        r.reverseParentheses("a(bcdefghijkl(mno)p)q");
+        System.out.println(r.reverseParentheses("a(bcdefghijkl(mno)p)q"));
     }
 
-    private String reverseFragmentParentheses2(String s) {
-        System.out.println(s.matches("/\\(([^()]*)\\)/i"));
-        return "hola";
-    }
+
 }
